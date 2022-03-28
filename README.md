@@ -1,2 +1,2 @@
-# UZRS
+# UZRS Token
 uzurocks contracts sol file
