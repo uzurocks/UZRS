@@ -448,7 +448,7 @@ contract UzuRocksToken is ERC20, Pausable, ERC20Burnable, AccessControl {
 
     function unlock(address account, uint256 amount) onlyRole(LOCKER_ROLE) public returns (bool) {
 
-        require(getAccountLock(account) <= amount, "ERC20: unlock amount is exceeded.");
+        require(getAccountLock(account) >= amount, "ERC20: unlock amount is exceeded.");
 
         _lockBalance[account] -= amount;
         emit UnLock(account, amount);
